@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace SportsFinal
 {
-    interface ITeam
+    public interface ITeam
     {
+        public List<IPlayer> players { get; }
+
+
     }
 }

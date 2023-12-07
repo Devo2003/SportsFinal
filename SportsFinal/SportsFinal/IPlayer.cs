@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace SportsFinal
 {
-    interface IPlayer
+    public interface IPlayer
     {
+        string Name { get; }
+        int playerNum { get; }
+
     }
 }

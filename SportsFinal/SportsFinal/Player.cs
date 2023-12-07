@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace SportsFinal
 {
-    class Player
+    public class Player : IPlayer
     {
+        public string Name { get; set; }
+        public int playerNum { get; set; }
+        public Player() 
+        {
+            
+        
+        }
+
+       
     }
 }

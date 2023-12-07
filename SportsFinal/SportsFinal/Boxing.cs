@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace SportsFinal
 {
-    class Boxing
+    public class Boxing : Sports
     {
+        public Boxing() 
+        {
+            MaxPlayers = 2;
+        
+        
+        }
     }
 }

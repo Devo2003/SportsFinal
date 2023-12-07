@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace SportsFinal
 {
-    interface ISports
+    public interface ISports
     {
+        string Name { get; set; }
+        string Description { get; set; }
+        int MaxPlayers { get; set; }
+
+
+
+
     }
 }

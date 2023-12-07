@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace SportsFinal
 {
-    class Team
+    public class Team : ITeam
     {
+        public List<IPlayer> players {  get; set; }
+        public Team() 
+        {
+            
+        
+        }
+
+       
+
+       
     }
 }
