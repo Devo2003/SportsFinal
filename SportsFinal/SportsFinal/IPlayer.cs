@@ -9,7 +9,10 @@ namespace SportsFinal
     public interface IPlayer
     {
         string Name { get; }
-        int playerNum { get; }
+        int PlayerNum { get; }
+
+        public void PlayerInfo(string name, int pn);
+
 
     }
 }

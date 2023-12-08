@@ -8,8 +8,9 @@ namespace SportsFinal
 {
     public interface ITeam
     {
-        public List<IPlayer> players { get; }
+       // public List<IPlayer> Players { get; }
 
-
+        public string TeamName { get; set; }
+        public int maxTeams { get; set; }
     }
 }

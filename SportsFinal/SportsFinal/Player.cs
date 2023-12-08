@@ -9,13 +9,18 @@ namespace SportsFinal
     public class Player : IPlayer
     {
         public string Name { get; set; }
-        public int playerNum { get; set; }
-        public Player() 
-        {
-            
+        public int PlayerNum { get; set; }
+
         
+
+        public Player( ) 
+        {
         }
 
-       
+        public void PlayerInfo(string name, int pn)
+        {
+            this.Name = name;
+            this.PlayerNum = pn;
+        }
     }
 }
