@@ -5,7 +5,7 @@
       "coverlet.collector/3.2.0": {
         "type": "package",
         "build": {
-          "build/netstandard1.0/_._": {}
+          "build/netstandard1.0/coverlet.collector.targets": {}
         }
       },
       "Microsoft.CodeCoverage/17.5.0": {
@@ -17,7 +17,8 @@
           "lib/netcoreapp3.1/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {}
         },
         "build": {
-          "build/netstandard2.0/_._": {}
+          "build/netstandard2.0/Microsoft.CodeCoverage.props": {},
+          "build/netstandard2.0/Microsoft.CodeCoverage.targets": {}
         }
       },
       "Microsoft.NET.Test.Sdk/17.5.0": {
@@ -33,10 +34,11 @@
           "lib/netcoreapp3.1/_._": {}
         },
         "build": {
-          "build/netcoreapp3.1/_._": {}
+          "build/netcoreapp3.1/Microsoft.NET.Test.Sdk.props": {},
+          "build/netcoreapp3.1/Microsoft.NET.Test.Sdk.targets": {}
         },
         "buildMultiTargeting": {
-          "buildMultiTargeting/_._": {}
+          "buildMultiTargeting/Microsoft.NET.Test.Sdk.props": {}
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {
@@ -304,7 +306,7 @@
           }
         },
         "build": {
-          "build/netcoreapp3.1/_._": {}
+          "build/netcoreapp3.1/Microsoft.TestPlatform.TestHost.props": {}
         }
       },
       "MSTest.TestAdapter/2.2.10": {
@@ -314,7 +316,8 @@
           "System.Diagnostics.TextWriterTraceListener": "4.3.0"
         },
         "build": {
-          "build/net5.0/_._": {}
+          "build/net5.0/MSTest.TestAdapter.props": {},
+          "build/net5.0/MSTest.TestAdapter.targets": {}
         }
       },
       "MSTest.TestFramework/2.2.10": {
@@ -330,7 +333,7 @@
           }
         },
         "build": {
-          "build/net5.0/_._": {}
+          "build/net5.0/MSTest.TestFramework.targets": {}
         }
       },
       "Newtonsoft.Json/13.0.1": {
@@ -594,22 +597,6 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "SportsTests/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "MSTest.TestAdapter": "2.2.10",
-          "MSTest.TestFramework": "2.2.10",
-          "Microsoft.NET.Test.Sdk": "17.5.0",
-          "coverlet.collector": "3.2.0"
-        },
-        "compile": {
-          "bin/placeholder/SportsTests.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SportsTests.dll": {}
         }
       }
     }
@@ -2305,16 +2292,14 @@
         "system.threading.tasks.4.3.0.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
-    },
-    "SportsTests/1.0.0": {
-      "type": "project",
-      "path": "../SportsTests/SportsTests.csproj",
-      "msbuildProject": "../SportsTests/SportsTests.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
-      "SportsTests >= 1.0.0"
+      "MSTest.TestAdapter >= 2.2.10",
+      "MSTest.TestFramework >= 2.2.10",
+      "Microsoft.NET.Test.Sdk >= 17.5.0",
+      "coverlet.collector >= 3.2.0"
     ]
   },
   "packageFolders": {
@@ -2324,11 +2309,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\407044\\Desktop\\SportsFinal\\SportsFinal\\SportsFinal\\SportsFinal.csproj",
-      "projectName": "SportsFinal",
-      "projectPath": "C:\\Users\\407044\\Desktop\\SportsFinal\\SportsFinal\\SportsFinal\\SportsFinal.csproj",
+      "projectUniqueName": "C:\\Users\\407044\\Desktop\\SportsFinal\\SportsFinal\\SportsTests\\SportsTests.csproj",
+      "projectName": "SportsTests",
+      "projectPath": "C:\\Users\\407044\\Desktop\\SportsFinal\\SportsFinal\\SportsTests\\SportsTests.csproj",
       "packagesPath": "C:\\Users\\407044\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\407044\\Desktop\\SportsFinal\\SportsFinal\\SportsFinal\\obj\\",
+      "outputPath": "C:\\Users\\407044\\Desktop\\SportsFinal\\SportsFinal\\SportsTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2349,11 +2334,7 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {
-            "C:\\Users\\407044\\Desktop\\SportsFinal\\SportsFinal\\SportsTests\\SportsTests.csproj": {
-              "projectPath": "C:\\Users\\407044\\Desktop\\SportsFinal\\SportsFinal\\SportsTests\\SportsTests.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -2365,6 +2346,24 @@
     "frameworks": {
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
+        "dependencies": {
+          "MSTest.TestAdapter": {
+            "target": "Package",
+            "version": "[2.2.10, )"
+          },
+          "MSTest.TestFramework": {
+            "target": "Package",
+            "version": "[2.2.10, )"
+          },
+          "Microsoft.NET.Test.Sdk": {
+            "target": "Package",
+            "version": "[17.5.0, )"
+          },
+          "coverlet.collector": {
+            "target": "Package",
+            "version": "[3.2.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -2379,9 +2378,6 @@
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
-          },
-          "Microsoft.WindowsDesktop.App.WPF": {
-            "privateAssets": "none"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"

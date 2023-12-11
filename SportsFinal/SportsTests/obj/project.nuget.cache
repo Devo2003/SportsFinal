@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Lsbt/4DMS0sltyTN/MHpZ9/CVANhhG8vqbo0rbfOioO02Jud2F/OW9Reo+GIq5IGFKJ1FIYkwu64BsViP9PD3g==",
+  "dgSpecHash": "Ltvgxb8k67rcv6yjVHP38KZ13Q84Oku/Xx0OGOynHXnLaK2eMLXYT2fjBGd7mTyilY4Z9PG9NFrG0ZI7E2eMbA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\407044\\Desktop\\SportsFinal\\SportsFinal\\SportsFinal\\SportsFinal.csproj",
+  "projectFilePath": "C:\\Users\\407044\\Desktop\\SportsFinal\\SportsFinal\\SportsTests\\SportsTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\407044\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\407044\\.nuget\\packages\\microsoft.codecoverage\\17.5.0\\microsoft.codecoverage.17.5.0.nupkg.sha512",

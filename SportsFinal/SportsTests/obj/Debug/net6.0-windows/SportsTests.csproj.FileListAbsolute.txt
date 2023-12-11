@@ -1,0 +1,5 @@
+C:\Users\407044\Desktop\SportsFinal\SportsFinal\SportsTests\obj\Debug\net6.0-windows\SportsTests.csproj.AssemblyReference.cache
+C:\Users\407044\Desktop\SportsFinal\SportsFinal\SportsTests\obj\Debug\net6.0-windows\SportsTests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\407044\Desktop\SportsFinal\SportsFinal\SportsTests\obj\Debug\net6.0-windows\SportsTests.AssemblyInfoInputs.cache
+C:\Users\407044\Desktop\SportsFinal\SportsFinal\SportsTests\obj\Debug\net6.0-windows\SportsTests.AssemblyInfo.cs
+C:\Users\407044\Desktop\SportsFinal\SportsFinal\SportsTests\obj\Debug\net6.0-windows\SportsTests.csproj.CoreCompileInputs.cache
