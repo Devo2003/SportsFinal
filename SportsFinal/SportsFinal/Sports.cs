@@ -10,7 +10,7 @@ namespace SportsFinal
     {
         public string Name { get ; set ; }
         public string Description { get ; set ; }
-        public int MaxPlayers { get; set; }
+        //public int MaxPlayers { get; set; }
 
         public Sports() 
         {

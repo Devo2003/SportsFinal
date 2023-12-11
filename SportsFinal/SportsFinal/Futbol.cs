@@ -10,7 +10,7 @@ namespace SportsFinal
     {
         public Futbol() 
         {
-            MaxPlayers = 11;
+           // MaxPlayers = 11;
         
         }
 

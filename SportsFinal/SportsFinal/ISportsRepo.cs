@@ -8,13 +8,14 @@ namespace SportsFinal
 {
     public  interface ISportsRepo
     {
-        
 
-        public string Name { get; set; }
-        public string Description();
+        public List<Sports> sports { get; set; }
 
-        public void AddSport(ISports s);
-        public void RemoveSport(ISports s);
+        public void AddSport(string name, string description);
+
+        public void RemoveSport(string name);
+
+        public List<Sports> GetSports();
 
     }
 }

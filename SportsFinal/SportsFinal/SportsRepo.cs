@@ -8,35 +8,29 @@ namespace SportsFinal
 {
     public class SportsRepo : ISportsRepo
     {
-        public string Name { get; set; }
+        public List<Sports> sports { get; set; }
 
-        public List<ISports> sports;
-
-        public SportsRepo(string name)
+        public SportsRepo()
         {
-            sports = new List<ISports>();
-
-            Name = name;
-        }
-        public void AddSport(ISports s)
-        {
-            this.sports.Add(s);
+            sports = new List<Sports>();
         }
 
-        public void RemoveSport(ISports s)
+        public void AddSport(string name, string description)
         {
-            if (sports.Contains(s))
-            {
-                sports.Remove(s);
-            }
+            this.sports.Add(new Sports { Name = name, Description = description });
         }
 
-        public string Description()
+        public void RemoveSport(string name)
         {
-            return string.Empty;
+            this.sports.RemoveAll(sport => sport.Name == name);
         }
 
-        
-        
+        public List<Sports> GetSports()
+        {
+            return sports;
+        }
+
+
+
     }
 }

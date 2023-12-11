@@ -10,7 +10,7 @@ namespace SportsFinal
     {
         public Boxing() 
         {
-            MaxPlayers = 2;
+            //MaxPlayers = 2;
         
         
         }

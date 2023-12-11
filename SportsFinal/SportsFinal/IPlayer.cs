@@ -11,7 +11,7 @@ namespace SportsFinal
         string Name { get; }
         int PlayerNum { get; }
 
-        public void PlayerInfo(string name, int pn);
+       
 
 
     }
