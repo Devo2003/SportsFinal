@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SportsFinal.Models;
+using SportsFinal.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,19 @@ namespace SportsFinal
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new BaseViewModel();
         }
+        /*
+        private void AddSport_Click(object sender, RoutedEventArgs e)
+        {
+            ((BaseViewModel)DataContext).Sports.Add(new Models.SportsModel { Name = "Sport Name", Description = "Describe the Sport" });
+
+        }
+
+        private void AddTeam_Click(object sender, RoutedEventArgs e)
+        {
+            ((BaseViewModel)DataContext).Teams.Add(new TeamsModel { Name = "New Team", SportsModel = ((BaseViewModel)DataContext).ChosenSport });
+        }
+        */
     }
 }

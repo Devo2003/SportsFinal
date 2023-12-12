@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SportsFinal"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="SportsApp" Height="450" Width="800">
     <Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <ListBox Grid.Column="0" ItemsSource="{Binding Sports}" DisplayMemberPath="Name" SelectedItem="{Binding ChosenSport}" Margin="10"/>
+            <ListBox Grid.Column="1" ItemsSource="{Binding Teams}" DisplayMemberPath="Name" SelectedItem="{Binding ChosenTeams}" Margin="10"/>
+
+            <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Top">
+                <Button Content="Add Sport" Command="{Binding AddSportCommand}" Margin="10"/>
+                
+                <Button Content="Remove Sport" Command="{Binding RemoveSportCommand}" Margin="10" IsEnabled="{Binding CanRemoveSport}"/>
+
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top">
+                <Button Content="Add Team" Command="{Binding AddTeamCommand}" Margin="10" IsEnabled="{Binding CanAddTeam}"/>
+                
+                <Button Content="Remove Team" Command="{Binding RemoveTeamCommand}" Margin="10" IsEnabled="{Binding CanRemoveTeam}"/>
+            </StackPanel>
+        </Grid>
 
     </Grid>
 </Window>
