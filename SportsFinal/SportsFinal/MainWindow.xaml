@@ -7,29 +7,35 @@
         mc:Ignorable="d"
         Title="SportsApp" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
 
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
+        <ListBox Grid.Column="0" ItemsSource="{Binding Sports}" DisplayMemberPath="Name" SelectedItem="{Binding ChosenSport}" Margin="10"/>
+        <ListBox Grid.Column="1" ItemsSource="{Binding Teams}" DisplayMemberPath="Name" SelectedItem="{Binding ChosenTeams}" Margin="10"/>
+        <ListBox Grid.Column="2" ItemsSource="{Binding Players}" DisplayMemberPath="Name" SelectedItem="{Binding ChosenPlayer}" Margin="10"/>
 
-            <ListBox Grid.Column="0" ItemsSource="{Binding Sports}" DisplayMemberPath="Name" SelectedItem="{Binding ChosenSport}" Margin="10"/>
-            <ListBox Grid.Column="1" ItemsSource="{Binding Teams}" DisplayMemberPath="Name" SelectedItem="{Binding ChosenTeams}" Margin="10"/>
+        <!-- Sport Buttons -->
+        <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Top">
+            <Button Content="Add Sport" Command="{Binding AddSportCommand}" Margin="10"/>
+            <Button Content="Remove Sport" Command="{Binding RemoveSportCommand}" Margin="10" IsEnabled="{Binding CanRemoveSport}"/>
+            <Button Content="Edit Sport Name" Command="{Binding EditSportNameCommand}" Margin="10" IsEnabled="{Binding CanEditSportName}"/>
+        </StackPanel>
 
-            <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Top">
-                <Button Content="Add Sport" Command="{Binding AddSportCommand}" Margin="10"/>
-                
-                <Button Content="Remove Sport" Command="{Binding RemoveSportCommand}" Margin="10" IsEnabled="{Binding CanRemoveSport}"/>
+        <!-- Team Buttons -->
+        <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top">
+            <Button Content="Add Team" Command="{Binding AddTeamCommand}" Margin="10" IsEnabled="{Binding CanAddTeam}"/>
+            <Button Content="Remove Team" Command="{Binding RemoveTeamCommand}" Margin="10" IsEnabled="{Binding CanRemoveTeam}"/>
+            <Button Content="Edit Team Name" Command="{Binding EditTeamNameCommand}" Margin="10" IsEnabled="{Binding CanEditTeamName}"/>
+        </StackPanel>
 
-            </StackPanel>
-
-            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top">
-                <Button Content="Add Team" Command="{Binding AddTeamCommand}" Margin="10" IsEnabled="{Binding CanAddTeam}"/>
-                
-                <Button Content="Remove Team" Command="{Binding RemoveTeamCommand}" Margin="10" IsEnabled="{Binding CanRemoveTeam}"/>
-            </StackPanel>
-        </Grid>
-
+        <!-- Player Buttons -->
+        <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Top">
+            <Button Content="Add Player" Command="{Binding AddPlayerCommand}" Margin="10" IsEnabled="{Binding CanAddPlayerToTeam}"/>
+            <Button Content="Remove Player" Command="{Binding RemovePlayerCommand}" Margin="10" IsEnabled="{Binding CanRemovePlayerFromTeam}"/>
+            <Button Content="Edit Player Name" Command="{Binding EditPlayerNameCommand}" Margin="10" IsEnabled="{Binding CanEditPlayerName}"/>
+        </StackPanel>
     </Grid>
 </Window>
