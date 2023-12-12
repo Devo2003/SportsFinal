@@ -8,20 +8,21 @@ using System.Threading.Tasks;
 
 namespace SportsFinal.Models
 {
-    public class TeamsModel : INotifyPropertyChanged
+    public class TeamsModel : INotifyPropertyChanged, ITeam
     {
-        private string _name;
-        private SportsModel _sportsModel;
-        private ObservableCollection<PlayerModel> _playerModels;
+        //Teams should have a Team name 
+        public string name { get; set; }
+        public SportsModel sportsModel { get; set; }
+        public ObservableCollection<PlayerModel> playerModels { get; set; }
 
         public string Name
         {
-            get { return _name; }
+            get { return name; }
             set
             {
-                if (_name != value)
+                if (name != value)
                 {
-                    _name = value;
+                    name = value;
                     OnPropertyChanged(nameof(Name));
                 }
             }
@@ -29,12 +30,12 @@ namespace SportsFinal.Models
 
         public SportsModel SportsModel
         {
-            get { return _sportsModel; }
+            get { return sportsModel; }
             set
             {
-                if (_sportsModel != value)
+                if (sportsModel != value)
                 {
-                    _sportsModel = value;
+                    sportsModel = value;
                     OnPropertyChanged(nameof(SportsModel));
                 }
             }
@@ -42,12 +43,12 @@ namespace SportsFinal.Models
 
         public ObservableCollection<PlayerModel> PlayerModels
         {
-            get { return _playerModels; }
+            get { return playerModels; }
             set
             {
-                if (_playerModels != value)
+                if (playerModels != value)
                 {
-                    _playerModels = value;
+                    playerModels = value;
                     OnPropertyChanged(nameof(PlayerModels));
                 }
             }

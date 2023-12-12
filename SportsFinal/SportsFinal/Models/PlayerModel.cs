@@ -7,38 +7,40 @@ using System.Threading.Tasks;
 
 namespace SportsFinal.Models
 {
-    public class PlayerModel : INotifyPropertyChanged
+    public class PlayerModel : INotifyPropertyChanged, IPlayer
     {
-        private string _name;
-        private int _playerNumber;
+        //The player has a Name and Player Number
+        public string name { get; set; }
+        public int playerNum { get; set; }
 
         public string Name
         {
-            get { return _name; }
+            get { return name; }
             set
             {
-                if (_name != value)
+                if (name != value)
                 {
-                    _name = value;
+                    name = value;
                     OnPropertyChanged(nameof(Name));
                 }
             }
         }
 
-        public int PlayerNumber
+        public int PlayerNum
         {
-            get { return _playerNumber; }
+            get { return playerNum; }
             set
             {
-                if (_playerNumber != value)
+                if (playerNum != value)
                 {
-                    _playerNumber = value;
-                    OnPropertyChanged(nameof(PlayerNumber));
+                    playerNum = value;
+                    OnPropertyChanged(nameof(PlayerNum));
                 }
             }
         }
 
         // INotifyPropertyChanged implementation
+        //Need this to update the name of the player that gets input
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged(string propertyName)

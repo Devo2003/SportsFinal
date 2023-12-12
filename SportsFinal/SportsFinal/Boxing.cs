@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SportsFinal
 {
-    public class Boxing : Sports
+    public class Boxing 
     {
         public Boxing() 
         {

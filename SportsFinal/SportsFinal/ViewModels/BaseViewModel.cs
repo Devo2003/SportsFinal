@@ -12,12 +12,12 @@ namespace SportsFinal.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        private ObservableCollection<SportsModel> _sports;
-        private ObservableCollection<TeamsModel> _teams;
-        private ObservableCollection<PlayerModel> _players;
-        private SportsModel _chosenSport;
-        private TeamsModel _chosenTeams;
-        private PlayerModel _chosenPlayers;
+        private ObservableCollection<SportsModel> sports;
+        private ObservableCollection<TeamsModel> teams;
+        private ObservableCollection<PlayerModel> players;
+        private SportsModel chosenSport;
+        private TeamsModel chosenTeams;
+        private PlayerModel chosenPlayers;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -25,7 +25,7 @@ namespace SportsFinal.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
+        //Commands to bind in the XAML 
         public ICommand AddSportCommand { get; }
         public ICommand AddTeamCommand { get; }
         public ICommand RemoveSportCommand { get; }
@@ -39,9 +39,9 @@ namespace SportsFinal.ViewModels
 
         public BaseViewModel()
         {
-            _sports = new ObservableCollection<SportsModel>();
-            _teams = new ObservableCollection<TeamsModel>();
-            _players = new ObservableCollection<PlayerModel>();
+            sports = new ObservableCollection<SportsModel>();
+            teams = new ObservableCollection<TeamsModel>();
+            players = new ObservableCollection<PlayerModel>();
 
             EditSportNameCommand = new RelayCommand(EditSportName, CanEditSportName);
             EditTeamNameCommand = new RelayCommand(EditTeamName, CanEditTeamName);
@@ -59,12 +59,12 @@ namespace SportsFinal.ViewModels
 
         public ObservableCollection<SportsModel> Sports
         {
-            get { return _sports; }
+            get { return sports; }
             set
             {
-                if (_sports != value)
+                if (sports != value)
                 {
-                    _sports = value;
+                    sports = value;
                     OnPropertyChanged(nameof(Sports));
                 }
             }
@@ -72,12 +72,12 @@ namespace SportsFinal.ViewModels
 
         public SportsModel ChosenSport
         {
-            get { return _chosenSport; }
+            get { return chosenSport; }
             set
             {
-                if (_chosenSport != value)
+                if (chosenSport != value)
                 {
-                    _chosenSport = value;
+                    chosenSport = value;
                     OnPropertyChanged(nameof(ChosenSport));
                     OnPropertyChanged(nameof(CanRemoveSport));
                 }
@@ -86,12 +86,12 @@ namespace SportsFinal.ViewModels
 
         public ObservableCollection<TeamsModel> Teams
         {
-            get { return _teams; }
+            get { return teams; }
             set
             {
-                if (_teams != value)
+                if (teams != value)
                 {
-                    _teams = value;
+                    teams = value;
                     OnPropertyChanged(nameof(Teams));
                     OnPropertyChanged(nameof(CanRemoveTeam));
                 }
@@ -100,12 +100,12 @@ namespace SportsFinal.ViewModels
 
         public TeamsModel ChosenTeams
         {
-            get { return _chosenTeams; }
+            get { return chosenTeams; }
             set
             {
-                if (_chosenTeams != value)
+                if (chosenTeams != value)
                 {
-                    _chosenTeams = value;
+                    chosenTeams = value;
                     OnPropertyChanged(nameof(ChosenTeams));
                     OnPropertyChanged(nameof(CanRemoveTeam));
                 }
@@ -114,12 +114,12 @@ namespace SportsFinal.ViewModels
 
         public ObservableCollection<PlayerModel> Players
         {
-            get { return _players; }
+            get { return players; }
             set
             {
-                if (_players != value)
+                if (players != value)
                 {
-                    _players = value;
+                    players = value;
                     OnPropertyChanged(nameof(Players));
                     OnPropertyChanged(nameof(CanRemovePlayerFromTeam));
                 }
@@ -128,12 +128,12 @@ namespace SportsFinal.ViewModels
 
         public PlayerModel ChosenPlayer
         {
-            get { return _chosenPlayers; }
+            get { return chosenPlayers; }
             set
             {
-                if (_chosenPlayers != value)
+                if (chosenPlayers != value)
                 {
-                    _chosenPlayers = value;
+                    chosenPlayers = value;
                     OnPropertyChanged(nameof(ChosenPlayer));
                     OnPropertyChanged(nameof(CanRemovePlayerFromTeam));
                 }
@@ -229,7 +229,7 @@ namespace SportsFinal.ViewModels
         {
             if (ChosenTeams != null)
             {
-                Players.Add(new PlayerModel { Name = "Player name", PlayerNumber = 1 });
+                Players.Add(new PlayerModel { Name = "Player name", PlayerNum    = 1 });
             }
         }
 

@@ -7,19 +7,20 @@ using System.Threading.Tasks;
 
 namespace SportsFinal.Models
 {
-    public class SportsModel : INotifyPropertyChanged
+    public class SportsModel : INotifyPropertyChanged, ISports
     {
-        private string _name;
-        private string _description;
+        //Sports should have a name and the description
+        public string Sportsname { get; set; }
+        public string description { get; set; }
 
         public string Name
         {
-            get { return _name; }
+            get { return Sportsname; }
             set
             {
-                if (_name != value)
+                if (Sportsname != value)
                 {
-                    _name = value;
+                    Sportsname = value;
                     OnPropertyChanged(nameof(Name));
                 }
             }
@@ -27,12 +28,12 @@ namespace SportsFinal.Models
 
         public string Description
         {
-            get { return _description; }
+            get { return description; }
             set
             {
-                if (_description != value)
+                if (description != value)
                 {
-                    _description = value;
+                    description = value;
                     OnPropertyChanged(nameof(Description));
                 }
             }
