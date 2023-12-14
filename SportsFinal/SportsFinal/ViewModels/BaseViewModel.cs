@@ -43,14 +43,14 @@ namespace SportsFinal.ViewModels
             teams = new ObservableCollection<TeamsModel>();
             players = new ObservableCollection<PlayerModel>();
 
-            EditSportNameCommand = new RelayCommand(EditSportName, CanEditSportName);
+            EditSportNameCommand = new RelayCommand(EditSportName, EnableButtonAfterAdd);
             EditTeamNameCommand = new RelayCommand(EditTeamName, CanEditTeamName);
             EditPlayerNameCommand = new RelayCommand(EditPlayerName, CanEditPlayerName);
 
             AddSportCommand = new RelayCommand(AddSport);
-            RemoveSportCommand = new RelayCommand(RemoveSport, CanRemoveSport);
+            RemoveSportCommand = new RelayCommand(RemoveSport, EnableButtonAfterAdd);
 
-            AddTeamCommand = new RelayCommand(AddTeam, CanAddTeam);
+            AddTeamCommand = new RelayCommand(AddTeam, EnableButtonAfterAdd);
             RemoveTeamCommand = new RelayCommand(RemoveTeam, CanRemoveTeam);
 
             AddPlayerCommand = new RelayCommand(AddPlayerToTeam, CanAddPlayerToTeam);
@@ -79,7 +79,7 @@ namespace SportsFinal.ViewModels
                 {
                     chosenSport = value;
                     OnPropertyChanged(nameof(ChosenSport));
-                    OnPropertyChanged(nameof(CanRemoveSport));
+                    OnPropertyChanged(nameof(EnableButtonAfterAdd));
                 }
             }
         }
@@ -220,10 +220,7 @@ namespace SportsFinal.ViewModels
             }
         }
 
-        private bool CanRemoveSport()
-        {
-            return ChosenSport != null;
-        }
+        
 
         private void AddPlayerToTeam()
         {
@@ -242,10 +239,12 @@ namespace SportsFinal.ViewModels
             }
         }
 
-        private bool CanAddTeam()
+        private bool EnableButtonAfterAdd()
         {
+
             return ChosenSport != null;
         }
+       
 
         private bool CanRemoveTeam()
         {
@@ -262,10 +261,7 @@ namespace SportsFinal.ViewModels
             return ChosenTeams != null && ChosenPlayer != null;
         }
 
-        private bool CanEditSportName()
-        {
-            return ChosenSport != null;
-        }
+        
 
         private bool CanEditTeamName()
         {
@@ -277,14 +273,6 @@ namespace SportsFinal.ViewModels
             return ChosenTeams != null && ChosenPlayer != null;
         }
 
-        private string ShowEditDialog(string title, string label, string currentName)
-        {
-            InputDialog dialog = new InputDialog(title, label, currentName);
-            if (dialog.ShowDialog() == true)
-            {
-                return dialog.Result;
-            }
-            return null;
-        }
+       
     }
 }
