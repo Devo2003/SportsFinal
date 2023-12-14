@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SportsFinal.Models
 {
-    public class TeamsModel : INotifyPropertyChanged, ITeam
+    public class TeamsModel : PropertyChangeFunctions, ITeam
     {
         //Teams should have a Team name 
         public string name { get; set; }
@@ -54,12 +54,6 @@ namespace SportsFinal.Models
             }
         }
 
-        // INotifyPropertyChanged implementation
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+       
     }
 }

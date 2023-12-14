@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SportsFinal.Models
 {
-    public class PlayerModel : INotifyPropertyChanged, IPlayer
+    public class PlayerModel : PropertyChangeFunctions, IPlayer
     {
         //The player has a Name and Player Number
         public string name { get; set; }
@@ -37,15 +37,6 @@ namespace SportsFinal.Models
                     OnPropertyChanged(nameof(PlayerNum));
                 }
             }
-        }
-
-        // INotifyPropertyChanged implementation
-        //Need this to update the name of the player that gets input
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

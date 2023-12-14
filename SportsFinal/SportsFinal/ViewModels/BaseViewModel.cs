@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace SportsFinal.ViewModels
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : PropertyChangeFunctions
     {
         private ObservableCollection<SportsModel> sports;
         private ObservableCollection<TeamsModel> teams;
@@ -19,12 +19,7 @@ namespace SportsFinal.ViewModels
         private TeamsModel chosenTeams;
         private PlayerModel chosenPlayers;
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        
         //Commands to bind in the XAML 
         public ICommand AddSportCommand { get; }
         public ICommand AddTeamCommand { get; }
