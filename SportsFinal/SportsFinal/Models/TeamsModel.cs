@@ -55,6 +55,20 @@ namespace SportsFinal.Models
             }
         }
 
+        public static TeamsModel CreateNewTeam(SportsModel chosenSport)
+        {
+            return new TeamsModel { Name = "Team name", SportsModel = chosenSport };
+        }
+
+        public void RemoveTeam(TeamsModel chosenTeams, ObservableCollection<TeamsModel> teams)
+        {
+            if (chosenTeams != null)
+            {
+                teams.Remove(chosenTeams);
+                chosenTeams = null;
+            }
+
+        }
         public void EditTeamName()
         {
 

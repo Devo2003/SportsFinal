@@ -1,6 +1,7 @@
 ﻿using SportsFinal.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -40,6 +41,20 @@ namespace SportsFinal.Models
             }
         }
 
+        public static SportsModel CreateNewSport()
+        {
+            return new SportsModel { Name = "Sport name", Description = "Describe sport" };
+        }
+
+        public void RemoveSport(ObservableCollection<SportsModel> sports, ref SportsModel chosenSport)
+        {
+            if (chosenSport != null)
+            {
+                sports.Remove(chosenSport);
+                chosenSport = null;
+            }
+        }
+
 
         // Edit Sport Name
         public void EditSportName()
@@ -52,9 +67,6 @@ namespace SportsFinal.Models
             {
                 Name = dialog.Result;
             }
-
-
-
         }
 
     }

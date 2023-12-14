@@ -15,6 +15,7 @@ namespace SportsFinal.ViewModels
         private ObservableCollection<SportsModel> sports;
         private ObservableCollection<TeamsModel> teams;
         private ObservableCollection<PlayerModel> players;
+
         private SportsModel chosenSport;
         private TeamsModel chosenTeams;
         private PlayerModel chosenPlayers;
@@ -22,14 +23,15 @@ namespace SportsFinal.ViewModels
         
         //Commands to bind in the XAML 
         public ICommand AddSportCommand { get; }
-        public ICommand AddTeamCommand { get; }
         public ICommand RemoveSportCommand { get; }
+        public ICommand EditSportNameCommand { get; }
+
+        public ICommand AddTeamCommand { get; }
         public ICommand RemoveTeamCommand { get; }
+        public ICommand EditTeamNameCommand { get; }
+
         public ICommand AddPlayerCommand { get; }
         public ICommand RemovePlayerCommand { get; }
-
-        public ICommand EditSportNameCommand { get; }
-        public ICommand EditTeamNameCommand { get; }
         public ICommand EditPlayerNameCommand { get; }
 
         public BaseViewModel()
@@ -38,18 +40,17 @@ namespace SportsFinal.ViewModels
             teams = new ObservableCollection<TeamsModel>();
             players = new ObservableCollection<PlayerModel>();
 
-            EditSportNameCommand = new RelayCommand(InputSportsName, EnableButtonAfterAdd);
-            EditTeamNameCommand = new RelayCommand(InputTeamsName, CanEditTeamName);
-            EditPlayerNameCommand = new RelayCommand(InputPlayersName, CanEditPlayerName);
-
             AddSportCommand = new RelayCommand(AddSport);
             RemoveSportCommand = new RelayCommand(RemoveSport, EnableButtonAfterAdd);
+            EditSportNameCommand = new RelayCommand(InputSportsName, EnableButtonAfterAdd);
 
-            AddTeamCommand = new RelayCommand(AddTeam, EnableButtonAfterAdd);
-            RemoveTeamCommand = new RelayCommand(RemoveTeam, CanRemoveTeam);
+            AddTeamCommand = new RelayCommand(ShouldAddTeam, EnableButtonAfterAdd);
+            RemoveTeamCommand = new RelayCommand(ShouldRemoveTeam, CanRemoveTeam);
+            EditTeamNameCommand = new RelayCommand(InputTeamsName, CanEditTeamName);
 
             AddPlayerCommand = new RelayCommand(AddPlayerToTeam, CanAddPlayerToTeam);
             RemovePlayerCommand = new RelayCommand(RemovePlayerFromTeam, CanRemovePlayerFromTeam);
+            EditPlayerNameCommand = new RelayCommand(InputPlayersName, CanEditPlayerName);
         }
 
         public ObservableCollection<SportsModel> Sports
@@ -134,7 +135,7 @@ namespace SportsFinal.ViewModels
                 }
             }
         }
-        //calls the method within the SportsModel class
+        //calls the method within the SportsModel class to check if its able to activate the edit button
         public void InputSportsName()
         {
             if (ChosenSport != null)
@@ -142,7 +143,7 @@ namespace SportsFinal.ViewModels
                 this.chosenSport.EditSportName();
             }
         }
-
+        //calls the method within the TeamsModel class to check if its able to activate the edit button
         public void InputTeamsName()
         {
             if (ChosenSport != null)
@@ -150,7 +151,7 @@ namespace SportsFinal.ViewModels
                 this.chosenTeams.EditTeamName();
             }
         }
-
+        //calls the method within the PlayerssModel class to check if its able to activate the edit button
         public void InputPlayersName()
         {
             if (ChosenTeams != null && ChosenPlayer != null)
@@ -162,58 +163,42 @@ namespace SportsFinal.ViewModels
 
         private void AddSport()
         {
-            Sports.Add(new SportsModel { Name = "Sport Name", Description = "Sport Description" });
+            Sports.Add(SportsModel.CreateNewSport());
         }
 
         private void RemoveSport()
         {
-            if (ChosenSport != null)
-            {
-                Sports.Remove(ChosenSport);
-                ChosenSport = null;
-            }
+            ChosenSport.RemoveSport(Sports, ref chosenSport);
         }
 
-        private void AddTeam()
+        private void ShouldAddTeam()
         {
             if (ChosenSport != null)
             {
-                Teams.Add(new TeamsModel { Name = "Team Name", SportsModel = ChosenSport });
+                Teams.Add(TeamsModel.CreateNewTeam(chosenSport));
             }
-
         }
 
-        private void RemoveTeam()
+        private void ShouldRemoveTeam()
         {
-            if (ChosenTeams != null)
-            {
-                Teams.Remove(ChosenTeams);
-                ChosenTeams = null;
-            }
+            chosenTeams.RemoveTeam(chosenTeams, teams);
         }
-
-        
 
         private void AddPlayerToTeam()
         {
             if (ChosenTeams != null)
             {
-                Players.Add(new PlayerModel { Name = "Player name", PlayerNum    = 1 });
+                Players.Add(PlayerModel.CreatePlayer());
             }
         }
 
         private void RemovePlayerFromTeam()
         {
-            if (ChosenTeams != null && ChosenPlayer != null)
-            {
-                Players.Remove(ChosenPlayer);
-                ChosenPlayer = null;
-            }
+           chosenPlayers.RemovePlayer(Players, ref chosenPlayers);
         }
 
         private bool EnableButtonAfterAdd()
         {
-
             return ChosenSport != null;
         }
        

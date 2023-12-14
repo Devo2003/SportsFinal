@@ -1,6 +1,7 @@
 ﻿using SportsFinal.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -37,6 +38,21 @@ namespace SportsFinal.Models
                     playerNum = value;
                     OnPropertyChanged(nameof(PlayerNum));
                 }
+            }
+        }
+
+        public static PlayerModel CreatePlayer()
+        {
+            return new PlayerModel { Name = "Player name", PlayerNum = 11 };
+        }
+
+        public void RemovePlayer(ObservableCollection<PlayerModel> players, ref PlayerModel chosenPlayer)
+        {
+            if (chosenPlayer != null)
+            {
+                players.Remove(chosenPlayer);
+                chosenPlayer = null;
+
             }
         }
 
