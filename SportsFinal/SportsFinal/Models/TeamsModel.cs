@@ -29,35 +29,9 @@ namespace SportsFinal.Models
             }
         }
 
-        public SportsModel SportsModel
-        {
-            get { return sportsModel; }
-            set
-            {
-                if (sportsModel != value)
-                {
-                    sportsModel = value;
-                    OnPropertyChanged(nameof(SportsModel));
-                }
-            }
-        }
-
-        public ObservableCollection<PlayerModel> PlayerModels
-        {
-            get { return playerModels; }
-            set
-            {
-                if (playerModels != value)
-                {
-                    playerModels = value;
-                    OnPropertyChanged(nameof(PlayerModels));
-                }
-            }
-        }
-
         public static TeamsModel CreateNewTeam(SportsModel chosenSport)
         {
-            return new TeamsModel { Name = "Team name", SportsModel = chosenSport };
+            return new TeamsModel { Name = "Team name", sportsModel = chosenSport };
         }
 
         public void RemoveTeam(TeamsModel chosenTeams, ObservableCollection<TeamsModel> teams)
@@ -67,11 +41,9 @@ namespace SportsFinal.Models
                 teams.Remove(chosenTeams);
                 chosenTeams = null;
             }
-
         }
         public void EditTeamName()
         {
-
             InputDialog dialog = new InputDialog("Edit Team Name", "Enter a new name:", Name);
             dialog.ShowDialog();
 
@@ -80,10 +52,6 @@ namespace SportsFinal.Models
             {
                 Name = dialog.Result;
             }
-
-
         }
-
-
     }
 }
