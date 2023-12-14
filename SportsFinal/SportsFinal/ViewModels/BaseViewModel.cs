@@ -38,9 +38,9 @@ namespace SportsFinal.ViewModels
             teams = new ObservableCollection<TeamsModel>();
             players = new ObservableCollection<PlayerModel>();
 
-            EditSportNameCommand = new RelayCommand(EditSportName, EnableButtonAfterAdd);
-            EditTeamNameCommand = new RelayCommand(EditTeamName, CanEditTeamName);
-            EditPlayerNameCommand = new RelayCommand(EditPlayerName, CanEditPlayerName);
+            EditSportNameCommand = new RelayCommand(InputSportsName, EnableButtonAfterAdd);
+            EditTeamNameCommand = new RelayCommand(InputTeamsName, CanEditTeamName);
+            EditPlayerNameCommand = new RelayCommand(InputPlayersName, CanEditPlayerName);
 
             AddSportCommand = new RelayCommand(AddSport);
             RemoveSportCommand = new RelayCommand(RemoveSport, EnableButtonAfterAdd);
@@ -134,53 +134,30 @@ namespace SportsFinal.ViewModels
                 }
             }
         }
-
-        // Edit Sport Name
-        private void EditSportName()
+        //calls the method within the SportsModel class
+        public void InputSportsName()
         {
             if (ChosenSport != null)
             {
-                InputDialog dialog = new InputDialog("Edit Sport Name", "Enter a new name:", ChosenSport.Name);
-                dialog.ShowDialog();
-
-                // Update the sport name if the result is not null
-                if (dialog.Result != null)
-                {
-                    ChosenSport.Name = dialog.Result;
-                }
+                this.chosenSport.EditSportName();
             }
         }
 
-        // Edit Team Name
-        private void EditTeamName()
+        public void InputTeamsName()
         {
-            if (ChosenTeams != null)
+            if (ChosenSport != null)
             {
-                InputDialog dialog = new InputDialog("Edit Team Name", "Enter a new name:", ChosenTeams.Name);
-                dialog.ShowDialog();
-
-                // Update the team name if the result is not null
-                if (dialog.Result != null)
-                {
-                    ChosenTeams.Name = dialog.Result;
-                }
+                this.chosenTeams.EditTeamName();
             }
         }
 
-        // Edit Player Name
-        private void EditPlayerName()
+        public void InputPlayersName()
         {
             if (ChosenTeams != null && ChosenPlayer != null)
             {
-                InputDialog dialog = new InputDialog("Edit Player Name", "Enter a new name:", ChosenPlayer.Name);
-                dialog.ShowDialog();
-
-                // Update the player name if the result is not null
-                if (dialog.Result != null)
-                {
-                    ChosenPlayer.Name = dialog.Result;
-                }
+                this.ChosenPlayer.EditPlayerName();
             }
+
         }
 
         private void AddSport()
@@ -256,8 +233,6 @@ namespace SportsFinal.ViewModels
             return ChosenTeams != null && ChosenPlayer != null;
         }
 
-        
-
         private bool CanEditTeamName()
         {
             return ChosenTeams != null;
@@ -267,7 +242,5 @@ namespace SportsFinal.ViewModels
         {
             return ChosenTeams != null && ChosenPlayer != null;
         }
-
-       
     }
 }

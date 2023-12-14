@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SportsFinal.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -37,6 +38,22 @@ namespace SportsFinal.Models
                     OnPropertyChanged(nameof(PlayerNum));
                 }
             }
+        }
+
+        // Edit Player Name
+        public void EditPlayerName()
+        {
+
+            InputDialog dialog = new InputDialog("Edit Player Name", "Enter a new name:", Name);
+            dialog.ShowDialog();
+
+            // Update the player name if the result is not null
+            if (dialog.Result != null)
+            {
+                Name = dialog.Result;
+            }
+
+
         }
     }
 }

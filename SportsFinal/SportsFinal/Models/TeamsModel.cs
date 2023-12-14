@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SportsFinal.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -54,6 +55,21 @@ namespace SportsFinal.Models
             }
         }
 
-       
+        public void EditTeamName()
+        {
+
+            InputDialog dialog = new InputDialog("Edit Team Name", "Enter a new name:", Name);
+            dialog.ShowDialog();
+
+            // Update the team name if the result is not null
+            if (dialog.Result != null)
+            {
+                Name = dialog.Result;
+            }
+
+
+        }
+
+
     }
 }
