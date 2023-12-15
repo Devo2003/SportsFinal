@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Newtonsoft.Json;
 
 namespace SportsFinal.ViewModels
 {
@@ -35,6 +36,9 @@ namespace SportsFinal.ViewModels
         public ICommand RemovePlayerCommand { get; }
         public ICommand EditPlayerNameCommand { get; }
 
+        public ICommand saveDataCommand { get; }
+        public ICommand loadDataCommand { get; }
+
         public BaseViewModel()
         {
             sports = new ObservableCollection<SportsModel>();
@@ -53,7 +57,45 @@ namespace SportsFinal.ViewModels
             AddPlayerCommand = new RelayCommand(AddPlayerToTeam, EnableButtons);
             RemovePlayerCommand = new RelayCommand(RemovePlayerFromTeam, EnbalePlayerButtons);
             EditPlayerNameCommand = new RelayCommand(InputPlayersName, EnbalePlayerButtons);
+
+            saveDataCommand = new RelayCommand(SaveInfo);
+            loadDataCommand = new RelayCommand(LoadInfo);
         }
+
+        private void SaveInfo()
+        {
+            SavingData.SaveData("C:\\Users\\407044\\Desktop\\SportsFinal\\SportsFinal\\SportsFinal\\TeamsData.json", Teams);
+            SavingData.SaveData("C:\\Users\\407044\\Desktop\\SportsFinal\\SportsFinal\\SportsFinal\\SportsData.json", Sports);
+            SavingData.SaveData("C:\\Users\\407044\\Desktop\\SportsFinal\\SportsFinal\\SportsFinal\\PlayersData.json", Players);
+        }
+
+        private void LoadInfo()
+        {
+            var loadedTeams = LoadingData.LoadData<TeamsModel>("C:\\Users\\407044\\Desktop\\SportsFinal\\SportsFinal\\SportsFinal\\TeamsData.json");
+            var loadedSports = LoadingData.LoadData<SportsModel>("C:\\Users\\407044\\Desktop\\SportsFinal\\SportsFinal\\SportsFinal\\SportsData.json");
+            var loadedPlayers = LoadingData.LoadData<PlayerModel>("C:\\Users\\407044\\Desktop\\SportsFinal\\SportsFinal\\SportsFinal\\PlayersData.json");
+
+            Teams.Clear();
+            Sports.Clear();
+            Players.Clear();
+
+            foreach (var sport in loadedSports)
+            {
+                Sports.Add(sport);
+            }
+
+            foreach (var team in loadedTeams)
+            {
+                Teams.Add(team);
+            }
+
+            foreach (var player in loadedPlayers)
+            {
+                Players.Add(player);
+            }
+
+        }
+
         //These are needed for their commands, but can they again be moved to their own perspective class?
         public ObservableCollection<SportsModel> Sports
         {

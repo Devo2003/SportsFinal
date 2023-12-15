@@ -1,0 +1,35 @@
+[
+  {
+    "Name": "Team name",
+    "name": "Team name",
+    "sportsModel": {
+      "Name": "Sport namexsxsx",
+      "Sportsname": "Sport namexsxsx",
+      "description": "Describe sport",
+      "Description": "Describe sport"
+    },
+    "playerModels": null
+  },
+  {
+    "Name": "ssxsxTeam name",
+    "name": "ssxsxTeam name",
+    "sportsModel": {
+      "Name": "Sport namexsxsx",
+      "Sportsname": "Sport namexsxsx",
+      "description": "Describe sport",
+      "Description": "Describe sport"
+    },
+    "playerModels": null
+  },
+  {
+    "Name": "Team name",
+    "name": "Team name",
+    "sportsModel": {
+      "Name": "Sport namexsxsx",
+      "Sportsname": "Sport namexsxsx",
+      "description": "Describe sport",
+      "Description": "Describe sport"
+    },
+    "playerModels": null
+  }
+]

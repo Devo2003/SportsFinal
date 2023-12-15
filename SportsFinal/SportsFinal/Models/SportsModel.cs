@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace SportsFinal.Models
 {
+    [Serializable]
     public class SportsModel : PropertyChangeFunctions, ISports
     {
         //Sports should have a name and the description

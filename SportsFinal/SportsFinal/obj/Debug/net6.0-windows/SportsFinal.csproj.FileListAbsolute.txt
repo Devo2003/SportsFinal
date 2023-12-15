@@ -19,3 +19,5 @@ C:\Users\407044\Desktop\SportsFinal\SportsFinal\SportsFinal\obj\Debug\net6.0-win
 C:\Users\407044\Desktop\SportsFinal\SportsFinal\SportsFinal\obj\Debug\net6.0-windows\SportsFinal.pdb
 C:\Users\407044\Desktop\SportsFinal\SportsFinal\SportsFinal\obj\Debug\net6.0-windows\SportsFinal.genruntimeconfig.cache
 C:\Users\407044\Desktop\SportsFinal\SportsFinal\SportsFinal\obj\Debug\net6.0-windows\ref\SportsFinal.dll
+C:\Users\407044\Desktop\SportsFinal\SportsFinal\SportsFinal\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\407044\Desktop\SportsFinal\SportsFinal\SportsFinal\obj\Debug\net6.0-windows\SportsFinal.csproj.CopyComplete

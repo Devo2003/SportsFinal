@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace SportsFinal.Models
 {
+    [Serializable]
     public class TeamsModel : PropertyChangeFunctions, ITeam
     {
         //Teams should have a Team name 

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "bICSX+QcRlqasMPxBKe00MqbRZ3oWO2SBqsP4dW8CKjf18+35S5FkD9csiVwHa8ndA6lRYENU/z+wUkefskDXA==",
+  "dgSpecHash": "5U6RUF6LW8g7gPTt3V3qMRE8xvt0xzf251TaBBWQrlYmGZLU2vD0UFv6cDxC+bEq8chkYr1qxQm9E8PPaiJqdg==",
   "success": true,
   "projectFilePath": "C:\\Users\\407044\\Desktop\\SportsFinal\\SportsFinal\\SportsFinal\\SportsFinal.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\407044\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

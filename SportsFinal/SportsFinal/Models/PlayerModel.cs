@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace SportsFinal.Models
 {
+    [Serializable]
     public class PlayerModel : PropertyChangeFunctions, IPlayer
     {
         //The player has a Name and Player Number
