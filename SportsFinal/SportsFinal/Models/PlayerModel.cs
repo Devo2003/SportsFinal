@@ -59,7 +59,6 @@ namespace SportsFinal.Models
         // Edit Player Name
         public void EditPlayerName()
         {
-
             InputDialog dialog = new InputDialog("Edit Player Name", "Enter a new name:", Name);
             dialog.ShowDialog();
 

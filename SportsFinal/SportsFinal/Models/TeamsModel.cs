@@ -39,7 +39,7 @@ namespace SportsFinal.Models
             if (chosenTeams != null)
             {
                 teams.Remove(chosenTeams);
-                chosenTeams = null;
+               
             }
         }
         public void EditTeamName()
