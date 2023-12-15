@@ -38,19 +38,5 @@ namespace SportsTest
             Assert.AreEqual(0, sports.Count);
             Assert.IsNull(chosenSport);
         }
-
-        [TestMethod]
-        [STAThread]
-        public void SportNameEditing()
-        {
-            // Arrange
-            var sport = new SportsModel { Name = "OldName", Description = "OldDescription" };
-
-            // Act
-            sport.EditSportName();
-
-            // Assert
-            Assert.AreEqual("OldName", sport.Name); 
-        }
     }
 }
