@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SportsFinal.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -17,6 +19,10 @@ namespace SportsFinal
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void OnPropertyChanged(string propertyName) { }
+        //protected virtual void OnPropertyChanged(string propertyName)
+
+        //public static PlayerModel CreatePlayer();
+        public void EditPlayerName();
+        public void RemovePlayer(ObservableCollection<PlayerModel> players, ref PlayerModel chosenPlayer);
     }
 }

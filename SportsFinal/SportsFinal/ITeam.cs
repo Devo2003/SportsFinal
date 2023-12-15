@@ -20,6 +20,8 @@ namespace SportsFinal
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void OnPropertyChanged(string propertyName) { }
+        // protected virtual void OnPropertyChanged(string propertyName) { }
+        public void RemoveTeam(TeamsModel chosenTeams, ObservableCollection<TeamsModel> teams);
+        public void EditTeamName();
     }
 }
