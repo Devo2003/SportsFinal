@@ -17,12 +17,11 @@ namespace SportsFinal
         string name { get; set; }
         int playerNum { get; set; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        event PropertyChangedEventHandler PropertyChanged;
 
-        //protected virtual void OnPropertyChanged(string propertyName)
-
-        //public static PlayerModel CreatePlayer();
-        public void EditPlayerName();
-        public void RemovePlayer(ObservableCollection<PlayerModel> players, ref PlayerModel chosenPlayer);
+        
+        void EditPlayerName();
+        void RemovePlayer(ObservableCollection<PlayerModel> players, ref PlayerModel chosenPlayer);
+        
     }
 }

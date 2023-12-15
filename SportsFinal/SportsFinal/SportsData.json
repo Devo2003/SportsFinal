@@ -1,14 +1,20 @@
 [
   {
-    "Name": "Sport name",
     "Sportsname": "Sport name",
     "description": "Describe sport",
+    "Name": "Sport name",
     "Description": "Describe sport"
   },
   {
-    "Name": "Sport namexsxsx",
-    "Sportsname": "Sport namexsxsx",
+    "Sportsname": "Boxing",
     "description": "Describe sport",
+    "Name": "Boxing",
+    "Description": "Describe sport"
+  },
+  {
+    "Sportsname": "Futbol",
+    "description": "Describe sport",
+    "Name": "Futbol",
     "Description": "Describe sport"
   }
 ]

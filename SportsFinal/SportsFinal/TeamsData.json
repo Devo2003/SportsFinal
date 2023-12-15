@@ -1,35 +1,35 @@
 [
   {
-    "Name": "Team name",
     "name": "Team name",
     "sportsModel": {
-      "Name": "Sport namexsxsx",
-      "Sportsname": "Sport namexsxsx",
+      "Sportsname": "Futbol",
       "description": "Describe sport",
+      "Name": "Futbol",
       "Description": "Describe sport"
     },
-    "playerModels": null
+    "playerModels": null,
+    "Name": "Team name"
   },
   {
-    "Name": "ssxsxTeam name",
-    "name": "ssxsxTeam name",
-    "sportsModel": {
-      "Name": "Sport namexsxsx",
-      "Sportsname": "Sport namexsxsx",
-      "description": "Describe sport",
-      "Description": "Describe sport"
-    },
-    "playerModels": null
-  },
-  {
-    "Name": "Team name",
     "name": "Team name",
     "sportsModel": {
-      "Name": "Sport namexsxsx",
-      "Sportsname": "Sport namexsxsx",
+      "Sportsname": "Futbol",
       "description": "Describe sport",
+      "Name": "Futbol",
       "Description": "Describe sport"
     },
-    "playerModels": null
+    "playerModels": null,
+    "Name": "Team name"
+  },
+  {
+    "name": "Team name",
+    "sportsModel": {
+      "Sportsname": "Futbol",
+      "description": "Describe sport",
+      "Name": "Futbol",
+      "Description": "Describe sport"
+    },
+    "playerModels": null,
+    "Name": "Team name"
   }
 ]

@@ -14,7 +14,7 @@ namespace SportsFinal
 
         public static ObservableCollection<T> LoadData<T>(string filepath)
         {
-
+            //Alert: you need to download the json extension for this to work if you are working on the VDI
             try
             {
                 if (File.Exists(filepath))

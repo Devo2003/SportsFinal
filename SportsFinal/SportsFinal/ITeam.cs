@@ -14,14 +14,12 @@ namespace SportsFinal
         //public string TeamName { get; set; }
         
 
-        public string name { get; set; }
-        public SportsModel sportsModel { get; set; }
-        public ObservableCollection<PlayerModel> playerModels { get; set; }
+        string name { get; set; }
+        SportsModel sportsModel { get; set; }
+        ObservableCollection<PlayerModel> playerModels { get; set; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        // protected virtual void OnPropertyChanged(string propertyName) { }
-        public void RemoveTeam(TeamsModel chosenTeams, ObservableCollection<TeamsModel> teams);
-        public void EditTeamName();
+        event PropertyChangedEventHandler PropertyChanged;
+        void RemoveTeam(TeamsModel chosenTeams, ObservableCollection<TeamsModel> teams);
+        void EditTeamName();
     }
 }
